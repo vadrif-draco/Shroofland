@@ -1,9 +1,9 @@
 var sound_notice = '<p id="sound-notice" onanimationend="game_screen.innerHTML = start_prompt">Please turn sound on for best experience.</p>';
 
 var start_prompt = '\
-<button class = "retry" onclick = "start_game()">BEGIN</p>\
+<button class = "retry" onclick = "start_game()">Begin</p>\
 '
-
+    // To be fair, the "retry" class that I used for the try again button was very fitting so I just reused it here lol.
 var welcome = '\
 <p class="welcome w1">Hi,</p>\
 <p class="welcome w2">Welcome to Shroofland.</p>\
@@ -35,7 +35,7 @@ var input1 = document.getElementById("input1");
 
 function start_game() {
     game_screen.innerHTML = welcome;
-    sound.src = 'https://github.com/vadrif-draco/Shroofland/blob/master/intro.mp3';
+    sound.src = 'intro.mp3';
     sound.play();
 }
 
@@ -49,7 +49,7 @@ function stage1_check() {
 function failure_check(stage_passed) {
     if (stage_passed == false) {
         game_screen.innerHTML = failure;
-        sound.src = 'https://github.com/vadrif-draco/Shroofland/blob/master/mission-failed.mp3';
+        sound.src = 'mission-failed.mp3';
         sound.play();
     }
 }

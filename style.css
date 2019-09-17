@@ -169,7 +169,7 @@
     color: transparent;
     animation-name: fade-in-and-out;
     animation-fill-mode: forwards;
-    animation-duration: 5000ms;
+    animation-duration: 4000ms;
     animation-delay: 0ms;
 }
 
@@ -177,32 +177,32 @@
     color: transparent;
     animation-name: fade-in-and-out;
     animation-fill-mode: forwards;
-    animation-duration: 5000ms;
-    animation-delay: 5000ms;
+    animation-duration: 4000ms;
+    animation-delay: 4000ms;
 }
 
 .w3 {
     color: transparent;
     animation-name: fade-in-and-out;
     animation-fill-mode: forwards;
-    animation-duration: 5000ms;
-    animation-delay: 10000ms;
+    animation-duration: 4000ms;
+    animation-delay: 8000ms;
 }
 
 .w4 {
     color: transparent;
     animation-name: fade-in-and-out;
     animation-fill-mode: forwards;
-    animation-duration: 5000ms;
-    animation-delay: 15000ms;
+    animation-duration: 4000ms;
+    animation-delay: 12000ms;
 }
 
 .w5 {
     color: transparent;
     animation-name: fade-in-and-out;
     animation-fill-mode: forwards;
-    animation-duration: 10000ms;
-    animation-delay: 20000ms;
+    animation-duration: 6000ms;
+    animation-delay: 16000ms;
 }
 
 
@@ -274,7 +274,7 @@
 .failure {
     animation-name: failure-animation;
     animation-fill-mode: forwards;
-    animation-duration: 4000ms;
+    animation-duration: 3600ms;
 }
 
 
