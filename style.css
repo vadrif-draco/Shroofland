@@ -1,0 +1,325 @@
+/* Generals */
+
+.body {
+    background-color: rgba(32, 32, 32);
+    color: rgba(200, 200, 200, 0.75);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.hr {
+    border-color: rgba(200, 200, 200, 0.5);
+    padding: 0;
+}
+
+.header {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+}
+
+.footer {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75em;
+    position: fixed;
+    bottom: 10%;
+    width: 100%;
+    padding: 0;
+    height: 0;
+    margin: 0;
+    left: 0;
+}
+
+.game-screen {
+    background-color: rgba(32, 32, 32);
+    font-family: 'Jura', sans-serif;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    min-width: 360px;
+    position: fixed;
+    display: flex;
+    bottom: 35%;
+    border: 0;
+    top: 25%;
+}
+
+
+/* Main Page */
+
+.footer-hr {
+    margin: 0 7% 6px 7%;
+}
+
+.main-body {
+    min-width: 360px;
+}
+
+.main-title {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    font-weight: 900;
+    font-variant: small-caps;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+    animation-name: hovering-anim-bwd;
+}
+
+.main-title:hover {
+    animation-name: hovering-anim-fwd;
+    animation-fill-mode: forwards;
+    animation-duration: 500ms;
+}
+
+@keyframes hovering-anim-fwd {
+    from {
+        text-shadow: 0 0 10px gray;
+    }
+    to {
+        text-shadow: 0 0 30px whitesmoke;
+    }
+}
+
+@keyframes hovering-anim-bwd {
+    from {
+        text-shadow: 0 0 30px whitesmoke;
+    }
+    to {
+        text-shadow: 0 0 10px gray;
+    }
+}
+
+
+/* Game Stages */
+
+
+/* Welcome Stage */
+
+@keyframes sound-notice-animation {
+    0% {
+        color: transparent;
+    }
+    25% {
+        color: white;
+    }
+    75% {
+        color: white;
+    }
+    99% {
+        color: transparent;
+        font-size: 100%;
+    }
+    100% {
+        color: transparent;
+        font-size: 0px;
+    }
+}
+
+@keyframes fade-in-and-out {
+    0% {
+        color: transparent;
+    }
+    25% {
+        color: rgba(200, 200, 200, 0.75);
+    }
+    75% {
+        color: white;
+        font-size: 100%;
+    }
+    99% {
+        color: transparent;
+        font-size: 100%;
+    }
+    100% {
+        color: transparent;
+        font-size: 0px;
+    }
+}
+
+@keyframes fade-in-then-fail {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#sound-notice {
+    color: transparent;
+    animation-name: sound-notice-animation;
+    animation-fill-mode: forwards;
+    animation-duration: 10000ms;
+}
+
+.w1 {
+    color: transparent;
+    animation-name: fade-in-and-out;
+    animation-fill-mode: forwards;
+    animation-duration: 5000ms;
+    animation-delay: 0ms;
+}
+
+.w2 {
+    color: transparent;
+    animation-name: fade-in-and-out;
+    animation-fill-mode: forwards;
+    animation-duration: 5000ms;
+    animation-delay: 5000ms;
+}
+
+.w3 {
+    color: transparent;
+    animation-name: fade-in-and-out;
+    animation-fill-mode: forwards;
+    animation-duration: 5000ms;
+    animation-delay: 10000ms;
+}
+
+.w4 {
+    color: transparent;
+    animation-name: fade-in-and-out;
+    animation-fill-mode: forwards;
+    animation-duration: 5000ms;
+    animation-delay: 15000ms;
+}
+
+.w5 {
+    color: transparent;
+    animation-name: fade-in-and-out;
+    animation-fill-mode: forwards;
+    animation-duration: 10000ms;
+    animation-delay: 20000ms;
+}
+
+
+/* Stage 1 */
+
+.text1 {
+    animation-name: fade-in-then-fail;
+    animation-fill-mode: forwards;
+    animation-duration: 4000ms;
+}
+
+.input1 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: transparent;
+    border-color: transparent;
+    caret-color: transparent;
+    text-align: center;
+    outline-width: 0;
+    font-size: 1em;
+    color: white;
+    padding: 10px;
+    border: 20px;
+    animation-name: fade-in-then-fail;
+    animation-fill-mode: forwards;
+    animation-duration: 4000ms;
+}
+
+
+/* The following removes the arrows of number inputs (inner/outer spinner buttons) */
+
+.input1::-webkit-inner-spin-button,
+.input1::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+
+/* The following changes the default placeholder color */
+
+::placeholder {
+    color: rgba(200, 200, 200, 0.5);
+    opacity: 1;
+}
+
+
+/* Failure */
+
+@keyframes failure-animation {
+    0% {
+        color: transparent;
+        font-size: 0%;
+    }
+    75% {
+        color: red;
+        font-size: 150%;
+    }
+    90% {
+        color: transparent;
+        font-size: 1000%;
+    }
+    100% {
+        color: transparent;
+        font-size: 0px;
+    }
+}
+
+.failure {
+    animation-name: failure-animation;
+    animation-fill-mode: forwards;
+    animation-duration: 4000ms;
+}
+
+
+/* Retry Prompt */
+
+.retry {
+    border-color: rgba(200, 200, 200, 0.75);
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(200, 200, 200, 0.75);
+    background-color: transparent;
+    padding: 0px 20px 0px 20px;
+    font-variant: small-caps;
+    align-items: center;
+    border-radius: 50%;
+    outline-width: 0;
+    font-size: 2em;
+    display: flex;
+    margin: 0;
+    border: 0;
+    animation-fill-mode: forwards;
+    animation-name: retry_hover_bwd;
+    animation-duration: 1000ms;
+}
+
+.retry:hover {
+    animation-name: retry_hover;
+    animation-fill-mode: forwards;
+    animation-duration: 500ms;
+    cursor: pointer;
+}
+
+@keyframes retry_hover {
+    from {
+        text-shadow: 0 0 0 transparent;
+    }
+    to {
+        text-shadow: 0 0 30px whitesmoke;
+    }
+}
+
+@keyframes retry_hover_bwd {
+    from {
+        text-shadow: 0 0 30px whitesmoke;
+    }
+    to {
+        text-shadow: 0 0 0 transparent;
+    }
+}
