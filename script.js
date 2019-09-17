@@ -35,7 +35,7 @@ function stage1_check() {
 function failure_check(stage_passed) {
     if (stage_passed == false) {
         game_screen.innerHTML = failure;
-        var sound_of_failure = new Audio('mission-failed.mp3');
+        var sound_of_failure = new Audio('https://github.com/vadrif-draco/Shroofland/blob/master/mission-failed.mp3');
         sound_of_failure.play();
     }
 }
@@ -54,7 +54,7 @@ var input1 = document.getElementById("input1");
 
 
 window.onload = () => {
-    var intro = new Audio('intro.mp3');
+    var intro = new Audio('https://github.com/vadrif-draco/Shroofland/blob/master/intro.mp3');
     intro.play();
     game_screen.innerHTML = welcome;
 }
