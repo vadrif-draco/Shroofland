@@ -1,4 +1,8 @@
-var sound_notice = '<p id="sound-notice" onanimationend="game_screen.innerHTML = welcome">Please turn sound on for best experience.</p>';
+var sound_notice = '<p id="sound-notice" onanimationend="game_screen.innerHTML = start_prompt">Please turn sound on for best experience.</p>';
+
+var start_prompt = '\
+<button class = "retry" onclick = "start_game()">BEGIN</p>\
+'
 
 var welcome = '\
 <p class="welcome w1">Hi,</p>\
@@ -24,6 +28,16 @@ var retry = '\
 '
 
 var stage1_passed = false;
+const sound = new Audio('');
+var game_screen = document.getElementById("game-screen");
+var sound_notice_element = document.getElementById("sound-notice");
+var input1 = document.getElementById("input1");
+
+function start_game() {
+    game_screen.innerHTML = welcome;
+    sound.src = 'https://github.com/vadrif-draco/Shroofland/blob/master/intro.mp3';
+    sound.play();
+}
 
 function stage1_check() {
     if (document.getElementById("input1").value == "12") {
@@ -35,8 +49,8 @@ function stage1_check() {
 function failure_check(stage_passed) {
     if (stage_passed == false) {
         game_screen.innerHTML = failure;
-        var sound_of_failure = new Audio('https://github.com/vadrif-draco/Shroofland/blob/master/mission-failed.mp3');
-        sound_of_failure.play();
+        sound.src = 'https://github.com/vadrif-draco/Shroofland/blob/master/mission-failed.mp3';
+        sound.play();
     }
 }
 
@@ -46,15 +60,4 @@ function restart_game() {
     game_screen.innerHTML = stage1;
 }
 
-var game_screen = document.getElementById("game-screen");
-
-var sound_notice_element = document.getElementById("sound-notice");
-
-var input1 = document.getElementById("input1");
-
-
-window.onload = () => {
-    var intro = new Audio('https://github.com/vadrif-draco/Shroofland/blob/master/intro.mp3');
-    intro.play();
-    game_screen.innerHTML = welcome;
-}
+window.onload = () => game_screen.innerHTML = sound_notice;
